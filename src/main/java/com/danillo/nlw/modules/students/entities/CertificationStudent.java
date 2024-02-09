@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-
+@Builder
 @Entity(name = "certifications")
 public class CertificationStudent {
 
@@ -31,7 +31,7 @@ public class CertificationStudent {
     private String technology;
     private int grade;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_answer_certification", insertable = false, updatable = false)
     @JsonBackReference
     private List<AnswersCertification> answersCertification;

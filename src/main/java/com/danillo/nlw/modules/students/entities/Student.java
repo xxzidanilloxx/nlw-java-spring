@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-
+@Builder
 @Entity(name = "students")
 public class Student {
 

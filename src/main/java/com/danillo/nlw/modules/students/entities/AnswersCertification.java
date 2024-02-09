@@ -1,5 +1,6 @@
 package com.danillo.nlw.modules.students.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-
+@Builder
 @Entity(name = "answers_certification_students")
 public class AnswersCertification {
 
@@ -24,6 +25,7 @@ public class AnswersCertification {
 
     @ManyToOne
     @JoinColumn(name = "certification_student_id", insertable = false, updatable = false)
+    @JsonBackReference
     private CertificationStudent certificationStudent;
 
     @Column(name = "id_student")
